@@ -84,15 +84,22 @@ body {
     border-radius: 0 0 40px 40px;
     width: 100%;
     box-shadow: 0 -4px 6px var(--sombra-botao);
+    min-height: 300px; /* Defina uma altura mínima */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.aba-conteudo {
+    display: none;
+    height: 100%; /* Garante que a altura da aba seja consistente */
+    overflow: hidden; /* Impede que o conteúdo ultrapasse a altura da aba */
 }
 
 .aba-conteudo.ativo {
     display: block;
 }
 
-.aba-conteudo {
-    display: none;
-}
 
 .aba-conteudo-titulo-principal {
     font-size: 28px;
