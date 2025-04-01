@@ -5,16 +5,23 @@
     --verde: #6FFF57;
     --branco: #FFFFFF;
     --botao-ativo: #3A375E;
-    --botao-inativo: rgba(58, 55, 94, 0.5);
-    --texto-fundo: rgba(58, 55, 94, 0.3);
+    --botao-inativo: rgba(58, 55, 94, 0.6);
+    --texto-fundo: rgba(58, 55, 94, 0.2);
+    --sombra-botao: rgba(0, 0, 0, 0.3);
+    --transicao: 0.3s ease-in-out;
 }
 
 body {
     background-color: var(--cor-de-fundo);
     color: var(--branco);
     font-family: 'Chakra Petch', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
-
 
 .conteudo-principal {
     display: flex;
@@ -23,19 +30,20 @@ body {
     align-items: center;
     max-width: 1200px;
     width: 100%;
-    margin: 0 auto;
+    padding: 20px;
 }
 
 .titulo-principal {
     text-align: left;
     width: 100%;
     font-size: 32px;
+    margin-bottom: 20px;
+    color: var(--branco);
 }
 
 .titulo-principal span {
     color: var(--verde);
 }
-
 
 .botao {
     font-family: 'Chakra Petch', sans-serif;
@@ -47,18 +55,21 @@ body {
     font-size: 18px;
     align-items: center;
     width: 100%;
-    border-bottom: 4px solid var(--botao-ativo);
-    border-left: 2px solid var(--botao-ativo);
-    border-right: 2px solid var(--botao-ativo);
-    border-top: none;
+    border-radius: 8px;
+    border: none;
+    box-shadow: 0 4px 6px var(--sombra-botao);
+    margin: 10px 0;
+    transition: background-color var(--transicao), transform var(--transicao);
 }
 
-.botao:first-child {
-    border-radius: 40px 40px 0 0;
+.botao:hover {
+    background-color: var(--botao-ativo);
+    transform: scale(1.05);
 }
 
-.botoes {
-    display: block;
+.botao:active {
+    background-color: var(--verde);
+    transform: scale(1);
 }
 
 .botao.ativo {
@@ -70,6 +81,8 @@ body {
     background-color: var(--texto-fundo);
     padding: 40px;
     border-radius: 0 0 40px 40px;
+    width: 100%;
+    box-shadow: 0 -4px 6px var(--sombra-botao);
 }
 
 .aba-conteudo.ativo {
@@ -83,18 +96,22 @@ body {
 .aba-conteudo-titulo-principal {
     font-size: 28px;
     text-align: center;
+    color: var(--branco);
 }
 
 .aba-conteudo-titulo-secundario {
     text-align: center;
     color: var(--verde);
     text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 10px;
 }
 
 .contador {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    margin-top: 20px;
 }
 
 .contador-digito {
@@ -106,19 +123,19 @@ body {
 .contador-digito-numero {
     font-size: 80px;
     margin: 0;
-
+    color: var(--verde);
 }
 
 .contador-digito-texto {
     color: var(--verde);
     font-size: 20px;
     margin: 0;
-
 }
 
 @media screen and (min-width: 768px) {
     .botoes {
         display: flex;
+        justify-content: center;
     }
 
     .botao:first-child {
@@ -128,4 +145,12 @@ body {
     .botao:last-child {
         border-radius: 0 40px 0 0;
     }
+
+    .titulo-principal {
+        font-size: 40px;
+    }
 }
+
+
+
+
