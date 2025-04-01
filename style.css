@@ -58,9 +58,10 @@ body {
     border-radius: 8px;
     border: none;
     box-shadow: 0 4px 6px var(--sombra-botao);
-    margin: 10px 0;
+    margin: 15px 0; /* Aumentei a margem vertical entre os botões */
     transition: background-color var(--transicao), transform var(--transicao);
 }
+
 
 .botao:hover {
     background-color: var(--botao-ativo);
